@@ -42,3 +42,18 @@ void setup() {
  *  - LED turns OFF
  *  - Prints "No Object"
  */
+
+void loop() {
+
+  int state = digitalRead(irPin);
+
+  if (state == LOW) {   // Object detected
+    digitalWrite(ledPin, HIGH);
+    Serial.println("Object Detected");
+  } else {              // No object
+    digitalWrite(ledPin, LOW);
+    Serial.println("No Object");
+  }
+
+  delay(200);
+}
